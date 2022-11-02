@@ -109,7 +109,7 @@ void Window::OnButtonClicked10(wxCommandEvent& evt)
 }
 void Window::OnButtonClicked11(wxCommandEvent& evt)
 {
-
+	
 }
 void Window::OnButtonClicked12(wxCommandEvent& evt)
 {

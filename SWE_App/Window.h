@@ -27,9 +27,6 @@ private:
 	wxButton* add = nullptr;
 	wxButton* mod = nullptr;
 	wxButton* equal = nullptr;
-public:
-	Window();
-
 	void OnButtonClicked0(wxCommandEvent& evt);
 	void OnButtonClicked1(wxCommandEvent& evt);
 	void OnButtonClicked2(wxCommandEvent& evt);
@@ -54,5 +51,9 @@ public:
 	void OnButtonClicked21(wxCommandEvent& evt);
 
 	wxDECLARE_EVENT_TABLE();
+public:
+	Window();
+
+	
 };
 
