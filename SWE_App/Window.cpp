@@ -1,4 +1,5 @@
 #include "Window.h"
+#include "Events.h"
 
 wxBEGIN_EVENT_TABLE(Window, wxFrame)
 	EVT_BUTTON(10000, OnButtonClicked0)

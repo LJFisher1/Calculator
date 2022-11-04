@@ -1,8 +1,14 @@
 #pragma once
+#include "wx/wx.h"
 #include "Window.h"
-class Events
+
+class Events : public wxEvent
 {
-	float num1;
-	float num2;
+private:
+	//wxString firstnum, secondnum, answer;
+	//int Op1, Op2, Operators;
+	//float result;
+public:
+
 };
 
