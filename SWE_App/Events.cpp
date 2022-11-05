@@ -1,6 +1,7 @@
 #include "Events.h"
 #include "Window.h"
 #include "App.h"
+#include <cmath>
 wxString firstnum, secondnum, displayAns;
 float op1, op2, result;
 int ops;
@@ -147,7 +148,6 @@ void Window::OnButtonClicked11(wxCommandEvent& evt)
 	firstnum = textBox->GetValue();
 	op1 = wxAtof(firstnum);
 	ops = 1;
-	textBox->SetValue("0");
 	evt.Skip();
 }
 void Window::OnButtonClicked12(wxCommandEvent& evt)
@@ -156,7 +156,6 @@ void Window::OnButtonClicked12(wxCommandEvent& evt)
 	firstnum = textBox->GetValue();
 	op1 = wxAtof(firstnum);
 	ops = 2;
-	textBox->SetValue("0");
 	evt.Skip();
 }
 void Window::OnButtonClicked13(wxCommandEvent& evt)
@@ -165,7 +164,6 @@ void Window::OnButtonClicked13(wxCommandEvent& evt)
 	firstnum = textBox->GetValue();
 	op1 = wxAtof(firstnum);
 	ops = 3;
-	textBox->SetValue("0");
 	evt.Skip();
 }
 void Window::OnButtonClicked14(wxCommandEvent& evt)
@@ -174,7 +172,6 @@ void Window::OnButtonClicked14(wxCommandEvent& evt)
 	firstnum = textBox->GetValue();
 	op1 = wxAtof(firstnum);
 	ops = 4;
-	textBox->SetValue("0");
 	evt.Skip();
 }
 void Window::OnButtonClicked15(wxCommandEvent& evt)
@@ -236,17 +233,24 @@ void Window::OnButtonClicked21(wxCommandEvent& evt)
 	op2 = wxAtof(secondnum);
 	switch (ops)
 	{
-	case 1: // Sin
-
+	case 1: // Sin						// For the Trig functions, it returns in radians
+										// the calculation is slightly off if converted to degrees
+		result = std::sin(op1);
+		displayAns = wxString::Format(wxT("%g"), result);
+		textBox->SetValue(displayAns);
 		break;
 	case 2: // Cos
-
+		result = std::cos(op1);
+		displayAns = wxString::Format(wxT("%g"), result);
+		textBox->SetValue(displayAns);
 		break;
 	case 3: // Tan
-
+		result = std::tan(op1);
+		displayAns = wxString::Format(wxT("%g"), result);
+		textBox->SetValue(displayAns);
 		break;
 	case 4: // Negate
-		result = (float)op1 * -1;
+		result = -op1;
 		displayAns = wxString::Format(wxT("%g"), result);
 		textBox->SetValue(displayAns);
 		break;
@@ -270,12 +274,15 @@ void Window::OnButtonClicked21(wxCommandEvent& evt)
 		displayAns = wxString::Format(wxT("%g"), result);
 		textBox->SetValue(displayAns);
 		break;
-
 	case 9: // Modulo
-		/*result = ((float)op1) % ((float)op2);
+		while (op1 >= op2)
+		{
+			op1 = op1 - op2;
+			result = op1;
+		}
 		displayAns = wxString::Format(wxT("%g"), result);
 		textBox->SetValue(displayAns);
-		break;*/
+		break;
 	}
 	evt.Skip();
 }
