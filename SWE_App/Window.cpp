@@ -1,4 +1,5 @@
 #include "Window.h"
+#include "Events.h"
 
 wxBEGIN_EVENT_TABLE(Window, wxFrame)
 	EVT_BUTTON(10000, OnButtonClicked0)
@@ -50,105 +51,5 @@ Window::Window() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(200, 200), w
 	add = new wxButton(this, 10019, "+", wxPoint(301, 250), wxSize(100, 25));
 	mod = new wxButton(this, 10020, "Mod", wxPoint(301, 125), wxSize(100, 50));
 	equal = new wxButton(this, 10021, "=", wxPoint(301, 275), wxSize(100, 50));
-
-}
-void Window::OnButtonClicked0(wxCommandEvent& evt)
-{
-	textBox->AppendText("0");
-	evt.Skip();
-}
-void Window::OnButtonClicked1(wxCommandEvent& evt)
-{
-	textBox->AppendText("1");
-	evt.Skip();
-}
-void Window::OnButtonClicked2(wxCommandEvent& evt)
-{
-	textBox->AppendText("2");
-	evt.Skip();
-}
-void Window::OnButtonClicked3(wxCommandEvent& evt)
-{
-	textBox->AppendText("3");
-	evt.Skip();
-}
-void Window::OnButtonClicked4(wxCommandEvent& evt)
-{
-	textBox->AppendText("4");
-	evt.Skip();
-}
-void Window::OnButtonClicked5(wxCommandEvent& evt)
-{
-	textBox->AppendText("5");
-	evt.Skip();
-}
-void Window::OnButtonClicked6(wxCommandEvent& evt)
-{
-	textBox->AppendText("6");
-	evt.Skip();
-}
-void Window::OnButtonClicked7(wxCommandEvent& evt)
-{
-	textBox->AppendText("7");
-	evt.Skip();
-}
-void Window::OnButtonClicked8(wxCommandEvent& evt)
-{
-	textBox->AppendText("8");
-	evt.Skip();
-}
-void Window::OnButtonClicked9(wxCommandEvent& evt)
-{
-	textBox->AppendText("9");
-	evt.Skip();
-}
-void Window::OnButtonClicked10(wxCommandEvent& evt)
-{
-	textBox->Undo();
-	evt.Skip();
-}
-void Window::OnButtonClicked11(wxCommandEvent& evt)
-{
-	
-}
-void Window::OnButtonClicked12(wxCommandEvent& evt)
-{
-
-}
-void Window::OnButtonClicked13(wxCommandEvent& evt)
-{
-
-}
-void Window::OnButtonClicked14(wxCommandEvent& evt)
-{
-
-}
-void Window::OnButtonClicked15(wxCommandEvent& evt)
-{
-	textBox->Clear();
-	evt.Skip();
-}
-void Window::OnButtonClicked16(wxCommandEvent& evt)
-{
-
-}
-void Window::OnButtonClicked17(wxCommandEvent& evt)
-{
-
-}
-void Window::OnButtonClicked18(wxCommandEvent& evt)
-{
-
-}
-void Window::OnButtonClicked19(wxCommandEvent& evt)
-{
-
-}
-void Window::OnButtonClicked20(wxCommandEvent& evt)
-{
-
-}
-void Window::OnButtonClicked21(wxCommandEvent& evt)
-{
 
 }
